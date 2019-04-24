@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import store, {INGREDIENTS} from '../../store'
 
 class Instructions extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Instructions extends Component {
     });
   }
   addInstruction() {
-    // Send data to Redux state
+    store.dispatch({item:INGREDIENTS, payload: this.state.input})
     this.setState({
       input: ""
     });
